@@ -1,825 +1,1396 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarunati Industries | Premium Sustainable Renewable Energy Solutions from Agricultural Waste</title>
-    <meta name="description" content="Tarunati Industries converts cotton stalk agricultural waste into high-quality biomass pellets for power plants. Carbon credits eligible. Located in Khammam, Telangana.">
-    <meta name="keywords" content="biomass pellets, cotton stalk pellets, renewable energy, carbon credits, sustainable growth, agricultural waste, power plant co-firing, Telangana, Khammam">
-    <meta name="author" content="Tarunati Industries Private Limited">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Tarunati Industries | Premium Sustainable Renewable Energy Solutions">
-    <meta property="og:description" content="Converting agricultural waste into renewable energy. Carbon credits eligible. Reducing carbon footprint through innovative biomass pellet solutions.">
-    <meta property="og:type" content="website">
-    
-    <!-- Premium Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" jost>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Source+Sans+Pro:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarunati Industries Pvt Ltd | Renewable Biomass Energy</title>
+<meta name="description" content="Tarunati Industries - Premium Biomass Briquettes & Pellets manufacturer in Telangana. Sustainable industrial fuel from agricultural residue. DPIIT Recognized Startup.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#C9A84C;
+  --gold-light:#F0D080;
+  --gold-dark:#8B6914;
+  --green:#2ECC71;
+  --green-deep:#1A7A43;
+  --green-muted:#1E5C33;
+  --charcoal:#0D0F0E;
+  --charcoal-mid:#151A17;
+  --charcoal-light:#1E2822;
+  --surface:#1A2019;
+  --surface2:#222D20;
+  --text-primary:#F0EDE4;
+  --text-muted:#8A9A88;
+  --text-gold:#C9A84C;
+  --border:#2A3828;
+  --accent-green:#39D98A;
+}
+html{scroll-behavior:smooth}
+body{background:var(--charcoal);color:var(--text-primary);font-family:'Outfit',sans-serif;overflow-x:hidden;line-height:1.6}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;transition:all .4s;background:transparent}
+nav.scrolled{background:rgba(13,15,14,.92);backdrop-filter:blur(20px);padding:14px 40px;border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;flex-direction:column;gap:2px}
+.nav-logo-main{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--gold);letter-spacing:.5px}
+.nav-logo-sub{font-size:10px;color:var(--text-muted);letter-spacing:3px;text-transform:uppercase}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{color:var(--text-muted);text-decoration:none;font-size:14px;font-weight:500;letter-spacing:.5px;transition:color .3s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#000;padding:10px 24px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;letter-spacing:.5px;transition:all .3s;cursor:pointer;border:none}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,.3)}
+.mobile-menu{display:none;background:none;border:none;color:var(--text-primary);cursor:pointer;font-size:24px}
+
+/* HERO */
+#hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.particles-canvas{position:absolute;inset:0;z-index:1}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,15,14,.85) 0%,rgba(13,15,14,.6) 50%,rgba(26,32,25,.8) 100%);z-index:2}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.05) 1px,transparent 1px);background-size:60px 60px;z-index:1}
+.hero-content{position:relative;z-index:3;text-align:center;max-width:1000px;padding:0 24px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);color:var(--gold);padding:8px 20px;border-radius:100px;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:32px}
+.hero-badge-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(36px,5.5vw,72px);font-weight:700;line-height:1.15;margin-bottom:24px;letter-spacing:-1px}
+.hero-title span{background:linear-gradient(135deg,var(--gold),var(--gold-light),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:clamp(16px,1.8vw,20px);color:var(--text-muted);max-width:700px;margin:0 auto 48px;font-weight:300;line-height:1.7}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:72px}
+.btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#0a0800;padding:16px 32px;border-radius:8px;font-size:15px;font-weight:700;text-decoration:none;letter-spacing:.5px;transition:all .3s;cursor:pointer;border:none;display:inline-block}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(201,168,76,.35)}
+.btn-outline{background:transparent;color:var(--text-primary);padding:16px 32px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;letter-spacing:.5px;transition:all .3s;cursor:pointer;border:1px solid rgba(240,237,228,.3);display:inline-block}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
+.btn-ghost{background:transparent;color:var(--text-muted);padding:16px 32px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;letter-spacing:.5px;transition:all .3s;cursor:pointer;border:1px solid var(--border);display:inline-block}
+.btn-ghost:hover{border-color:var(--green);color:var(--green)}
+.hero-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;max-width:900px;margin:0 auto}
+.metric-item{background:rgba(26,32,25,.8);backdrop-filter:blur(10px);padding:28px 16px;text-align:center}
+.metric-val{font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,38px);font-weight:700;color:var(--gold);margin-bottom:6px}
+.metric-label{font-size:12px;color:var(--text-muted);letter-spacing:1.5px;text-transform:uppercase;line-height:1.4}
+
+/* SECTIONS GENERAL */
+section{padding:100px 0}
+.container{max-width:1240px;margin:0 auto;padding:0 40px}
+.section-label{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px}
+.section-label::before{content:'';display:block;width:24px;height:1px;background:var(--gold)}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);font-weight:700;line-height:1.2;margin-bottom:20px}
+.section-sub{font-size:18px;color:var(--text-muted);max-width:600px;line-height:1.7}
+.gold-text{color:var(--gold)}
+.green-text{color:var(--green)}
+
+/* BIOMASS FLOW */
+#why-biomass{background:var(--charcoal-mid)}
+.flow-wrapper{display:flex;align-items:stretch;gap:0;margin-top:64px;overflow-x:auto}
+.flow-step{flex:1;min-width:140px;background:var(--surface);border:1px solid var(--border);padding:32px 20px;text-align:center;position:relative;cursor:pointer;transition:all .4s}
+.flow-step:hover,.flow-step.active{background:var(--surface2);border-color:var(--gold);transform:translateY(-4px)}
+.flow-step-icon{font-size:36px;margin-bottom:16px}
+.flow-step-title{font-size:14px;font-weight:600;color:var(--text-primary);margin-bottom:8px}
+.flow-arrow{width:32px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:20px;flex-shrink:0}
+.flow-benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+.benefit-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:32px 24px;position:relative;overflow:hidden;transition:all .3s}
+.benefit-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--green))}
+.benefit-card:hover{border-color:var(--gold);transform:translateY(-4px)}
+.benefit-icon{font-size:32px;margin-bottom:16px}
+.benefit-num{font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--gold);margin-bottom:8px}
+.benefit-title{font-size:16px;font-weight:600;margin-bottom:8px}
+.benefit-desc{font-size:14px;color:var(--text-muted);line-height:1.6}
+
+/* ABOUT */
+#about{background:var(--charcoal)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:64px}
+.about-visual{position:relative}
+.about-card-big{background:linear-gradient(135deg,var(--surface),var(--surface2));border:1px solid var(--border);border-radius:16px;padding:48px;position:relative;overflow:hidden}
+.about-card-big::after{content:'';position:absolute;bottom:-40px;right:-40px;width:200px;height:200px;background:radial-gradient(circle,rgba(201,168,76,.15),transparent 70%)}
+.timeline{margin-top:48px;position:relative}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--gold),var(--green),transparent)}
+.tl-item{padding:0 0 36px 28px;position:relative}
+.tl-dot{position:absolute;left:-5px;top:4px;width:12px;height:12px;background:var(--gold);border-radius:50%;border:2px solid var(--charcoal)}
+.tl-year{font-size:12px;color:var(--gold);font-weight:600;letter-spacing:2px;margin-bottom:6px}
+.tl-title{font-size:16px;font-weight:600;margin-bottom:4px}
+.tl-desc{font-size:14px;color:var(--text-muted)}
+.vision-mission{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.vm-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:28px}
+.vm-label{font-size:11px;color:var(--gold);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
+.vm-text{font-size:15px;color:var(--text-muted);line-height:1.7}
+
+/* FEEDSTOCK */
+#feedstock{background:var(--charcoal-mid)}
+.feedstock-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:64px}
+.feedstock-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:28px 20px;cursor:pointer;transition:all .3s;position:relative;overflow:hidden}
+.feedstock-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,.0),rgba(201,168,76,.08));opacity:0;transition:opacity .3s}
+.feedstock-card:hover,.feedstock-card.selected{border-color:var(--gold);transform:translateY(-4px)}
+.feedstock-card:hover::after,.feedstock-card.selected::after{opacity:1}
+.feedstock-icon{font-size:40px;margin-bottom:16px}
+.feedstock-name{font-size:16px;font-weight:600;margin-bottom:8px}
+.feedstock-region{font-size:12px;color:var(--text-muted)}
+.feedstock-detail{background:var(--surface2);border:1px solid var(--border);border-radius:16px;padding:40px;margin-top:32px;display:none}
+.feedstock-detail.visible{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.fd-stat{text-align:center}
+.fd-stat-val{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--gold);margin-bottom:6px}
+.fd-stat-label{font-size:13px;color:var(--text-muted);letter-spacing:1px}
+
+/* PRODUCTS */
+#products{background:var(--charcoal)}
+.products-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:64px}
+.product-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all .4s;position:relative}
+.product-card:hover{transform:translateY(-8px);border-color:var(--gold);box-shadow:0 40px 80px rgba(0,0,0,.5)}
+.product-visual{height:280px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.product-visual-briquette{background:radial-gradient(circle at 30% 30%,#3a2a0a,#1a1208)}
+.product-visual-pellet{background:radial-gradient(circle at 30% 30%,#0a2a1a,#081208)}
+.product-3d{font-size:120px;filter:drop-shadow(0 20px 40px rgba(0,0,0,.8));animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-16px) rotate(5deg)}}
+.product-badge{position:absolute;top:20px;right:20px;background:rgba(201,168,76,.2);border:1px solid var(--gold);color:var(--gold);padding:6px 14px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.product-info{padding:36px}
+.product-name{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;margin-bottom:8px}
+.product-specs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
+.spec-item{background:var(--charcoal);border-radius:8px;padding:16px}
+.spec-val{font-size:18px;font-weight:700;color:var(--gold);margin-bottom:4px}
+.spec-label{font-size:12px;color:var(--text-muted);letter-spacing:.5px}
+.product-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{background:rgba(46,204,113,.1);border:1px solid rgba(46,204,113,.2);color:var(--green);padding:6px 14px;border-radius:100px;font-size:12px;font-weight:500}
+
+/* PROCESS */
+#process{background:var(--charcoal-mid)}
+.process-flow{display:grid;grid-template-columns:repeat(7,1fr);gap:0;margin-top:64px;position:relative}
+.process-flow::before{content:'';position:absolute;top:40px;left:7%;right:7%;height:2px;background:linear-gradient(90deg,var(--gold),var(--green),var(--gold));z-index:0}
+.process-step{text-align:center;position:relative;z-index:1;padding:0 8px}
+.ps-circle{width:80px;height:80px;border-radius:50%;background:var(--surface);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 16px;position:relative;transition:all .4s;cursor:default}
+.ps-circle.active{border-color:var(--gold);background:rgba(201,168,76,.15);box-shadow:0 0 30px rgba(201,168,76,.3)}
+.ps-num{position:absolute;top:-8px;right:-8px;width:22px;height:22px;background:var(--gold);color:#000;border-radius:50%;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.ps-title{font-size:13px;font-weight:600;margin-bottom:6px}
+.ps-desc{font-size:11px;color:var(--text-muted);line-height:1.5}
+
+/* INFRASTRUCTURE */
+#infrastructure{background:var(--charcoal)}
+.infra-grid{display:grid;grid-template-columns:2fr 1fr;gap:48px;align-items:center;margin-top:64px}
+.facility-map{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:40px;position:relative;min-height:500px}
+.facility-zones{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;height:100%;min-height:420px}
+.zone{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;cursor:pointer;transition:all .3s;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.zone:hover{border-color:var(--gold)}
+.zone.highlight{border-color:var(--gold);background:rgba(201,168,76,.1)}
+.zone-icon{font-size:28px;margin-bottom:8px}
+.zone-label{font-size:13px;font-weight:600;margin-bottom:4px}
+.zone-size{font-size:11px;color:var(--text-muted)}
+.infra-stats{display:flex;flex-direction:column;gap:20px}
+.infra-stat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;transition:all .3s}
+.infra-stat-card:hover{border-color:var(--gold)}
+.is-val{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--gold);margin-bottom:4px}
+.is-label{font-size:13px;color:var(--text-muted)}
+
+/* QUALITY */
+#quality{background:var(--charcoal-mid)}
+.quality-dash{display:grid;grid-template-columns:1fr 2fr;gap:48px;margin-top:64px;align-items:start}
+.quality-params{display:flex;flex-direction:column;gap:16px}
+.qp-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;transition:all .3s;cursor:default}
+.qp-item:hover{border-color:var(--gold)}
+.qp-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.qp-name{font-size:15px;font-weight:600}
+.qp-val{font-size:18px;font-weight:700;color:var(--gold)}
+.qp-bar-bg{height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+.qp-bar{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--gold),var(--green));transition:width 1.5s ease}
+.quality-certifications{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:40px;position:relative;overflow:hidden}
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+.cert-item{background:var(--charcoal);border-radius:10px;padding:20px;text-align:center;border:1px solid var(--border)}
+.cert-icon{font-size:32px;margin-bottom:10px}
+.cert-name{font-size:13px;font-weight:600;margin-bottom:4px}
+.cert-desc{font-size:11px;color:var(--text-muted)}
+
+/* IMPACT COUNTERS */
+#impact{background:var(--charcoal)}
+.impact-counters{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-top:64px}
+.counter-item{background:var(--surface);padding:40px 24px;text-align:center;position:relative}
+.counter-item::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.counter-item:nth-child(1)::before{background:var(--gold)}
+.counter-item:nth-child(2)::before{background:#E67E22}
+.counter-item:nth-child(3)::before{background:var(--green)}
+.counter-item:nth-child(4)::before{background:#3498DB}
+.counter-item:nth-child(5)::before{background:#9B59B6}
+.counter-icon{font-size:36px;margin-bottom:16px}
+.counter-val{font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,44px);font-weight:700;color:var(--gold);margin-bottom:8px;min-height:52px;display:flex;align-items:center;justify-content:center}
+.counter-label{font-size:12px;color:var(--text-muted);letter-spacing:1px;text-transform:uppercase;line-height:1.5}
+
+/* INDUSTRIES */
+#industries{background:var(--charcoal-mid)}
+.industries-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:64px}
+.industry-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:28px 20px;cursor:pointer;transition:all .3s;position:relative;overflow:hidden}
+.industry-card:hover{border-color:var(--gold);transform:translateY(-6px)}
+.industry-card .hover-detail{position:absolute;inset:0;background:rgba(26,32,25,.95);padding:24px;display:flex;flex-direction:column;justify-content:center;opacity:0;transition:opacity .3s;border-radius:12px}
+.industry-card:hover .hover-detail{opacity:1}
+.ind-icon{font-size:40px;margin-bottom:16px}
+.ind-name{font-size:16px;font-weight:600;margin-bottom:8px}
+.ind-desc{font-size:13px;color:var(--text-muted)}
+.hd-title{font-size:14px;font-weight:700;color:var(--gold);margin-bottom:12px}
+.hd-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+.hd-list li{font-size:13px;color:var(--text-muted);display:flex;align-items:center;gap:8px}
+.hd-list li::before{content:'→';color:var(--green);font-size:11px}
+
+/* MARKET OPPORTUNITY */
+#market{background:var(--charcoal)}
+.market-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:64px}
+.chart-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:32px}
+.chart-title{font-size:16px;font-weight:600;margin-bottom:8px}
+.chart-sub{font-size:13px;color:var(--text-muted);margin-bottom:24px}
+.chart-container{position:relative;height:240px}
+.market-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.mstat{background:var(--charcoal);border-radius:10px;padding:16px;text-align:center}
+.mstat-val{font-size:22px;font-weight:700;color:var(--gold);margin-bottom:4px}
+.mstat-label{font-size:11px;color:var(--text-muted)}
+
+/* COMPARISON */
+#comparison{background:var(--charcoal-mid)}
+.compare-table{margin-top:64px;overflow-x:auto}
+.ctable{width:100%;border-collapse:collapse;font-size:15px}
+.ctable th{padding:20px 24px;text-align:left;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);font-weight:600;border-bottom:1px solid var(--border)}
+.ctable th.highlight-col{background:rgba(201,168,76,.08);color:var(--gold)}
+.ctable td{padding:18px 24px;border-bottom:1px solid rgba(42,56,40,.5)}
+.ctable td.highlight-col{background:rgba(201,168,76,.05);font-weight:600}
+.ctable tr:hover td{background:rgba(255,255,255,.02)}
+.check{color:var(--green);font-size:18px}
+.cross{color:#E74C3C;font-size:18px}
+.partial{color:var(--gold);font-size:16px}
+
+/* LEADERSHIP */
+#leadership{background:var(--charcoal)}
+.leadership-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:64px}
+.leader-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all .4s}
+.leader-card:hover{transform:translateY(-8px);border-color:var(--gold)}
+.leader-avatar{height:200px;display:flex;align-items:center;justify-content:center;font-size:80px;background:linear-gradient(135deg,var(--surface),var(--surface2))}
+.leader-info{padding:28px}
+.leader-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:6px}
+.leader-role{font-size:13px;color:var(--gold);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px}
+.leader-bio{font-size:14px;color:var(--text-muted);line-height:1.6}
+
+/* PROJECT HIGHLIGHTS */
+#highlights{background:var(--charcoal-mid)}
+.highlights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px}
+.hl-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:36px;position:relative;overflow:hidden;transition:all .3s}
+.hl-card::before{content:attr(data-num);position:absolute;top:-20px;right:20px;font-family:'Playfair Display',serif;font-size:120px;font-weight:700;color:rgba(201,168,76,.05);line-height:1;pointer-events:none}
+.hl-card:hover{border-color:var(--gold)}
+.hl-val{font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,40px);font-weight:700;color:var(--gold);margin-bottom:8px}
+.hl-title{font-size:18px;font-weight:600;margin-bottom:12px}
+.hl-desc{font-size:14px;color:var(--text-muted);line-height:1.6}
+
+/* TESTIMONIALS */
+#testimonials{background:var(--charcoal)}
+.testimonials-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:64px}
+.testi-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:32px;position:relative}
+.testi-card::before{content:'"';position:absolute;top:20px;left:28px;font-family:'Playfair Display',serif;font-size:80px;color:rgba(201,168,76,.15);line-height:1}
+.testi-text{font-size:15px;color:var(--text-muted);line-height:1.7;margin-bottom:24px;padding-top:40px}
+.testi-author{display:flex;align-items:center;gap:14px}
+.testi-avatar{width:44px;height:44px;background:linear-gradient(135deg,var(--gold),var(--gold-dark));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#000;flex-shrink:0}
+.testi-name{font-size:15px;font-weight:600}
+.testi-org{font-size:12px;color:var(--text-muted)}
+.partners-strip{margin-top:80px;text-align:center}
+.partners-label{font-size:12px;color:var(--text-muted);letter-spacing:3px;text-transform:uppercase;margin-bottom:32px}
+.partners-logos{display:flex;flex-wrap:wrap;justify-content:center;gap:32px;align-items:center}
+.partner-logo{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 28px;font-size:13px;font-weight:600;color:var(--text-muted);transition:all .3s}
+.partner-logo:hover{border-color:var(--gold);color:var(--gold)}
+
+/* CONTACT */
+#contact{background:linear-gradient(135deg,var(--charcoal-mid),var(--charcoal));position:relative;overflow:hidden}
+#contact::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(201,168,76,.05),transparent 60%);pointer-events:none}
+.contact-content{text-align:center;position:relative;z-index:1}
+.contact-title{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,64px);font-weight:700;margin-bottom:24px;line-height:1.15}
+.contact-sub{font-size:18px;color:var(--text-muted);max-width:600px;margin:0 auto 56px;line-height:1.7}
+.contact-ctas{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:80px}
+.contact-info{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:900px;margin:0 auto}
+.ci-card{background:rgba(26,32,25,.6);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:12px;padding:28px;text-align:center;transition:all .3s}
+.ci-card:hover{border-color:var(--gold)}
+.ci-icon{font-size:28px;margin-bottom:12px}
+.ci-label{font-size:11px;color:var(--text-muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+.ci-val{font-size:15px;font-weight:600}
+
+/* FOOTER */
+footer{background:var(--charcoal-mid);border-top:1px solid var(--border);padding:60px 0 32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand-name{font-family:'Playfair Display',serif;font-size:22px;color:var(--gold);margin-bottom:8px}
+.footer-brand-sub{font-size:11px;color:var(--text-muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.footer-brand-desc{font-size:14px;color:var(--text-muted);line-height:1.7}
+.footer-col-title{font-size:12px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;font-weight:600}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:12px}
+.footer-links a{color:var(--text-muted);text-decoration:none;font-size:14px;transition:color .3s}
+.footer-links a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-copy{font-size:13px;color:var(--text-muted)}
+.footer-badges{display:flex;flex-wrap:wrap;gap:8px}
+.fbadge{background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);color:var(--gold);padding:6px 12px;border-radius:100px;font-size:11px;font-weight:600;letter-spacing:.5px}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+
+/* MOBILE */
+@media(max-width:1024px){
+  .hero-metrics{grid-template-columns:repeat(2,1fr)}
+  .feedstock-grid{grid-template-columns:repeat(2,1fr)}
+  .industries-grid{grid-template-columns:repeat(2,1fr)}
+  .impact-counters{grid-template-columns:repeat(3,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .market-grid{grid-template-columns:1fr}
+  .process-flow{grid-template-columns:repeat(4,1fr);gap:16px}
+  .process-flow::before{display:none}
+}
+@media(max-width:768px){
+  nav{padding:16px 20px}
+  .nav-links{display:none}
+  .mobile-menu{display:block}
+  .container{padding:0 20px}
+  section{padding:72px 0}
+  .about-grid,.products-grid,.infra-grid,.quality-dash,.flow-benefits,.highlights-grid,.testimonials-grid,.leadership-grid,.contact-info,.vision-mission{grid-template-columns:1fr}
+  .impact-counters{grid-template-columns:1fr 1fr}
+  .feedstock-detail.visible{grid-template-columns:1fr 1fr}
+  .hero-ctas{flex-direction:column;align-items:center}
+  .process-flow{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .cert-grid{grid-template-columns:1fr}
+}
+
+/* NAV MOBILE OPEN */
+.nav-mobile-open .nav-links{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--charcoal);padding:100px 40px 40px;gap:24px;z-index:999}
+.nav-mobile-open .nav-links a{font-size:22px}
+</style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header" id="header">
-        <nav class="nav">
-            <div class="nav__brand">
-                <div class="nav__logo">T</div>
-                <span class="nav__brand-text">Tarunati Industries</span>
-            </div>
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="#hero" class="nav__link active">Home</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#about" class="nav__link">About</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#solution" class="nav__link">Solution</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#carbon-credits" class="nav__link">Carbon Credits</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#market" class="nav__link">Market</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#investment" class="nav__link">Investment</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#contact" class="nav__link">Contact</a>
-                    </li>
-                </ul>
-                <div class="nav__close" id="nav-close">×</div>
-            </div>
-            <div class="nav__toggle" id="nav-toggle">☰</div>
-        </nav>
-    </header>
 
-    <!-- Main Content -->
-    <main class="main">
-        <!-- Hero Section -->
-        <section class="hero" id="hero">
-            <div class="hero__container">
-                <div class="hero__content">
-                    <h1 class="hero__title">
-                        Moving Towards <span class="hero__highlight">Sustainable Growth</span>
-                    </h1>
-                    <p class="hero__subtitle">
-                        Transforming agricultural waste into premium biomass pellets, generating carbon credits, 
-                        and creating a sustainable energy ecosystem for a cleaner tomorrow.
-                    </p>
-                    <div class="hero__stats">
-                        <div class="stat">
-                            <span class="stat__number" data-target="40">0</span>
-                            <span class="stat__label">Tons per Day</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat__number" data-target="4095">0</span>
-                            <span class="stat__label">kcal/kg Calorific Value</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat__number" data-target="15">0</span>
-                            <span class="stat__label">K Tons CO₂ Avoided</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat__number" data-target="3">0</span>
-                            <span class="stat__label">Cr Revenue from Credits</span>
-                        </div>
-                    </div>
-                    <div class="hero__actions">
-                        <a href="#investment" class="btn btn--primary btn--lg">Invest with Us</a>
-                        <a href="#about" class="btn btn--outline btn--lg">Learn More</a>
-                    </div>
-                </div>
-                <div class="hero__visual">
-                    <img src="https://pplx-res.cloudinary.com/image/upload/v1757064417/pplx_project_search_images/24b022f0a5c0390b43340f40fa1e35e2fd69c171.png" alt="Cotton Harvesting and Biomass Collection" class="hero__image">
-                </div>
-            </div>
-        </section>
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <div class="nav-logo-main">Tarunati Industries</div>
+    <div class="nav-logo-sub">Renewable Biomass Energy</div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#why-biomass">Biomass</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#market">Market</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get Quote</a>
+  <button class="mobile-menu" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
+</nav>
 
-        <!-- Company Overview Section -->
-        <section class="about fade-in-up" id="about">
-            <div class="container">
-                <h2 class="section__title">Tarunati Industries Private Limited</h2>
-                <p class="section__subtitle">Pioneering sustainable solutions for a greener tomorrow through innovative agricultural waste management and carbon credit generation.</p>
-                
-                <div class="about__content">
-                    <div class="about__mission card">
-                        <div class="card__body">
-                            <h3>Our Mission</h3>
-                            <p>Driving Sustainable Energy from Agricultural Waste - Converting cotton stalks into high-quality biomass pellets while generating valuable carbon credits, minimizing stubble burning, and creating economic opportunities for farmers and energy providers across India.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="about__vision card">
-                        <div class="card__body">
-                            <h3>Our Vision</h3>
-                            <p>To be India's leading sustainable energy company transforming agricultural waste into clean power, making significant environmental impact through carbon offset programs and creating substantial value for stakeholders.</p>
-                        </div>
-                    </div>
-                </div>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="hero-grid-bg"></div>
+  </div>
+  <canvas class="particles-canvas" id="particles"></canvas>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      DPIIT Recognized Startup · Telangana, India
+    </div>
+    <h1 class="hero-title">
+      Transforming Agricultural<br>
+      Residue into <span>Renewable Industrial Energy</span>
+    </h1>
+    <p class="hero-sub">
+      Sustainable Biomass Briquettes & Pellets Engineered for the Future of Clean Industrial Fuel — Powering Industries Across India
+    </p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">Get Industrial Supply Quote</a>
+      <a href="#contact" class="btn-outline">Schedule a Consultation</a>
+      <a href="#process" class="btn-ghost">Explore Our Process</a>
+    </div>
+    <div class="hero-metrics">
+      <div class="metric-item">
+        <div class="metric-val" id="m1">5,000+</div>
+        <div class="metric-label">Tons Annual<br>Capacity</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-val">3800–4500</div>
+        <div class="metric-label">GCV Fuel<br>Range (Kcal/kg)</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-val">100%</div>
+        <div class="metric-label">Agricultural Waste<br>Utilization</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-val">₹76.9L</div>
+        <div class="metric-label">Project<br>Investment</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-                Founders Section 
-                <div class="founders fade-in-up">
-                    <h3 class="founders__title">Meet Our Founders</h3>
-                    <div class="founders__grid">
-                        <div class="founder card">
-                            <div class="card__body">
-                                <h4>Vivek Merugu</h4>
-                                <p class="founder__credentials">BTech NITW</p>
-                                <p class="founder__role">Co-Founder & CTO</p>
-                                <p class="founder__expertise">Technical Innovation & Process Engineering</p>
-                                <p>Passionate entrepreneur with strong technical background from NIT Warangal, dedicated to sustainable innovation and environmental conservation through cutting-edge biomass technology solutions.</p>
-                            </div>
-                        </div>
-                        <div class="founder card">
-                            <div class="card__body">
-                                <h4>Dhanush Chandra Kasarapu</h4>
-                                <p class="founder__credentials">BTech NITW | MBA IIMK</p>
-                                <p class="founder__role">Co-Founder & CEO</p>
-                                <p class="founder__expertise">Strategic Planning & Business Development</p>
-                                <p>Combines technical expertise from NIT Warangal with business acumen from IIM Kozhikode, driving strategic growth and market development in renewable energy and carbon trading sectors.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- WHY BIOMASS -->
+<section id="why-biomass">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">The Opportunity</div>
+      <h2 class="section-title">Why <span class="gold-text">Biomass</span> Energy?</h2>
+      <p class="section-sub">Converting agricultural waste into premium industrial fuel — clean, renewable, and more cost-effective than coal.</p>
+    </div>
+    <div class="flow-wrapper reveal reveal-delay-1">
+      <div class="flow-step active" onclick="activateStep(this)">
+        <div class="flow-step-icon">🌾</div>
+        <div class="flow-step-title">Agricultural Waste</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" onclick="activateStep(this)">
+        <div class="flow-step-icon">🚜</div>
+        <div class="flow-step-title">Collection</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" onclick="activateStep(this)">
+        <div class="flow-step-icon">⚙️</div>
+        <div class="flow-step-title">Processing</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" onclick="activateStep(this)">
+        <div class="flow-step-icon">🟤</div>
+        <div class="flow-step-title">Briquettes & Pellets</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" onclick="activateStep(this)">
+        <div class="flow-step-icon">🏭</div>
+        <div class="flow-step-title">Industrial Energy</div>
+      </div>
+    </div>
+    <div class="flow-benefits">
+      <div class="benefit-card reveal reveal-delay-1">
+        <div class="benefit-icon">🌿</div>
+        <div class="benefit-num">40%</div>
+        <div class="benefit-title">Carbon Reduction</div>
+        <div class="benefit-desc">Significantly lower carbon emissions vs coal combustion. Biomass is carbon-neutral in the renewable energy cycle.</div>
+      </div>
+      <div class="benefit-card reveal reveal-delay-2">
+        <div class="benefit-icon">⚡</div>
+        <div class="benefit-num">1:1</div>
+        <div class="benefit-title">Coal Replacement</div>
+        <div class="benefit-desc">Direct drop-in substitute for coal in industrial boilers. No infrastructure changes required for most setups.</div>
+      </div>
+      <div class="benefit-card reveal reveal-delay-3">
+        <div class="benefit-icon">💰</div>
+        <div class="benefit-num">25%</div>
+        <div class="benefit-title">Cost Savings</div>
+        <div class="benefit-desc">Average 20–30% reduction in industrial fuel costs compared to coal or other conventional fossil fuels.</div>
+      </div>
+      <div class="benefit-card reveal reveal-delay-4">
+        <div class="benefit-icon">🏭</div>
+        <div class="benefit-num">Zero</div>
+        <div class="benefit-title">Waste to Ash</div>
+        <div class="benefit-desc">Minimal ash generation. Clean combustion means less maintenance and cleaner boiler operations year-round.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <!-- Problem & Solution Section -->
-        <section class="solution fade-in-up" id="solution">
-            <div class="container">
-                <div class="solution__problem">
-                    <h2 class="section__title">The Agricultural Waste Crisis</h2>
-                    <div class="problem__content">
-                        <div class="problem__text">
-                            <h3>Environmental & Economic Challenges</h3>
-                            <ul class="problem__list">
-                                <li>15-18 lakh tons of agricultural waste burned annually in Telangana</li>
-                                <li>Cotton stalk burning creates severe air pollution in rural communities</li>
-                                <li>Stubble burning contributes up to 35% of Delhi's winter air pollution</li>
-                                <li>Releases harmful CO₂, PM2.5, CO, and NOx emissions</li>
-                                <li>Reduces soil fertility and damages agricultural ecosystems</li>
-                                <li>Wasted biomass potential of 30-35 lakh tons annually in Telangana alone</li>
-                            </ul>
-                        </div>
-                        <div class="problem__visual">
-                            <img src="https://pplx-res.cloudinary.com/image/upload/v1756781130/pplx_project_search_images/bbb23284cca69d6d472287f001ac6a2ef64b93bf.png" alt="Agricultural Waste and Biomass Solutions" class="problem__image">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="solution__answer">
-                    <h2 class="section__title">Our Innovative Solution</h2>
-                    <div class="solution__grid">
-                        <div class="solution__item card">
-                            <div class="card__body">
-                                <h4> Premium Cotton Stalk Pellets</h4>
-                                <p>Converting 15,000 tons of cotton stalks annually into high-energy biomass pellets with exceptional 4095 kcal/kg calorific value for optimal power generation efficiency.</p>
-                            </div>
-                        </div>
-                        <div class="solution__item card">
-                            <div class="card__body">
-                                <h4> Power Plant Co-firing Compliance</h4>
-                                <p>Supporting government mandates for 5-10% biomass co-firing in thermal power plants, ensuring regulatory compliance and sustainable energy production for 71+ TPPs.</p>
-                            </div>
-                        </div>
-                        <div class="solution__item card">
-                            <div class="card__body">
-                                <h4> Carbon Credits Revenue</h4>
-                                <p>Eligible for CCTS 2023 carbon credit programs generating Rs. 2-3 crores additional annual revenue through verified emission reductions and offset mechanisms.</p>
-                            </div>
-                        </div>
-                        <div class="solution__item card">
-                            <div class="card__body">
-                                <h4> Zero Net Carbon Footprint</h4>
-                                <p>Completely carbon neutral process - CO₂ released during combustion is naturally absorbed in the next crop cycle, creating true sustainability.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Carbon Credits Section - Comprehensive -->
-        <section class="carbon-credits fade-in-up" id="carbon-credits">
-            <div class="container">
-                <h2 class="section__title">Carbon Credits Monetization Strategy</h2>
-                <p class="section__subtitle">Generating substantial additional revenue through verified carbon offset programs and emission trading mechanisms.</p>
-                
-                <div class="carbon__hero">
-                    <img src="https://pplx-res.cloudinary.com/image/upload/v1757064418/pplx_project_search_images/4dafc4ebd40e446c23cd6d276b7ce2eb8fe8e022.png" alt="Carbon Credits for Greener Future" class="carbon__hero-image">
-                </div>
-
-                <div class="carbon__overview">
-                    <div class="carbon__grid">
-                        <div class="carbon__item card">
-                            <div class="card__body">
-                                <h4> CCTS 2023 Eligibility</h4>
-                                <p>Fully compliant with Carbon Credit Trading Scheme 2023 guidelines, enabling participation in India's official carbon trading mechanism with verified emission reduction credits.</p>
-                            </div>
-                        </div>
-                        <div class="carbon__item card">
-                            <div class="card__body">
-                                <h4> Voluntary Carbon Markets</h4>
-                                <p>Access to private enterprises and individual carbon offset buyers seeking verified emission reductions for their sustainability goals and net-zero commitments.</p>
-                            </div>
-                        </div>
-                        <div class="carbon__item card">
-                            <div class="card__body">
-                                <h4> Financial Benefits</h4>
-                                <p>Rs. 2-3 crores additional annual revenue through carbon credit sales, representing 20-25% of total project revenue and enhancing overall profitability.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carbon__mechanism">
-                    <h3 class="subsection__title">Carbon Trading Mechanism</h3>
-                    <div class="mechanism__content">
-                        <div class="mechanism__text">
-                            <div class="mechanism__points">
-                                <div class="mechanism__point">
-                                    <span class="point__number">1.2-1.5</span>
-                                    <span class="point__label">Tons CO₂e offset per ton pellet produced</span>
-                                </div>
-                                <div class="mechanism__point">
-                                    <span class="point__number">15,000-18,000</span>
-                                    <span class="point__label">Tons CO₂ avoided annually</span>
-                                </div>
-                                <div class="mechanism__point">
-                                    <span class="point__number">100</span>
-                                    <span class="point__label">Tons PM2.5 prevented annually</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mechanism__visual">
-                            <img src="https://pplx-res.cloudinary.com/image/upload/v1755186628/pplx_project_search_images/bb54aaf208c9b8c9045d10e9e2aad3960ce9fe87.png" alt="Carbon Project Types and Credits" class="mechanism__image">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carbon__benefits">
-                    <h3 class="subsection__title">Client Benefits & Market Advantages</h3>
-                    <div class="benefits__grid">
-                        <div class="benefit card">
-                            <div class="card__body">
-                                <h4>🏭 Thermal Power Plants</h4>
-                                <ul class="benefit__list">
-                                    <li>Earn carbon credits through biomass co-firing</li>
-                                    <li>Avoid penalties for emission targets</li>
-                                    <li>Meet regulatory compliance requirements</li>
-                                    <li>Reduce overall carbon intensity</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="benefit card">
-                            <div class="card__body">
-                                <h4> International Standards</h4>
-                                <ul class="benefit__list">
-                                    <li>Verified Carbon Standard (VCS) compliance</li>
-                                    <li>Gold Standard certification eligibility</li>
-                                    <li>ISO 14064 greenhouse gas accounting</li>
-                                    <li>Third-party verification processes</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="benefit card">
-                            <div class="card__body">
-                                <h4> Market Opportunities</h4>
-                                <ul class="benefit__list">
-                                    <li>Growing corporate sustainability demands</li>
-                                    <li>Government emission reduction mandates</li>
-                                    <li>International climate finance access</li>
-                                    <li>Premium pricing for verified credits</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carbon__process">
-                    <h3 class="subsection__title">Verification & Trading Process</h3>
-                    <div class="process__steps">
-                        <div class="step">
-                            <div class="step__number">01</div>
-                            <h4>Baseline Assessment</h4>
-                            <p>Establish emission baseline and measurement protocols</p>
-                        </div>
-                        <div class="step">
-                            <div class="step__number">02</div>
-                            <h4>Production Monitoring</h4>
-                            <p>Continuous monitoring of pellet production and emission reductions</p>
-                        </div>
-                        <div class="step">
-                            <div class="step__number">03</div>
-                            <h4>Third-party Verification</h4>
-                            <p>Independent verification of emission reduction claims</p>
-                        </div>
-                        <div class="step">
-                            <div class="step__number">04</div>
-                            <h4>Credit Issuance</h4>
-                            <p>Certified carbon credits issued for verified reductions</p>
-                        </div>
-                        <div class="step">
-                            <div class="step__number">05</div>
-                            <h4>Market Trading</h4>
-                            <p>Sale of credits through various trading platforms and direct buyers</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Technical Specifications -->
-        <section class="technical fade-in-up" id="technical">
-            <div class="container">
-                <h2 class="section__title">Technical Excellence & Specifications</h2>
-                <p class="section__subtitle">Superior quality specifications meeting international standards for biomass fuel applications and carbon credit requirements.</p>
-                
-                <div class="technical__facility">
-                    <img src="https://pplx-res.cloudinary.com/image/upload/v1756392619/pplx_project_search_images/79fc57f1fcdee275bda65f3d0b2604ace4ba270a.png" alt="Biomass Pellet Production Facility" class="facility__image">
-                </div>
-
-                <div class="technical__grid">
-                    <div class="spec card">
-                        <div class="card__body">
-                            <h4>Daily Production Capacity</h4>
-                            <p class="spec__value">40 tons/day</p>
-                            <p class="spec__note">24/7 continuous operations</p>
-                        </div>
-                    </div>
-                    <div class="spec card">
-                        <div class="card__body">
-                            <h4>Annual Production</h4>
-                            <p class="spec__value">12,000 tons</p>
-                            <p class="spec__note">Consistent year-round output</p>
-                        </div>
-                    </div>
-                    <div class="spec card">
-                        <div class="card__body">
-                            <h4>Calorific Value</h4>
-                            <p class="spec__value">4095 kcal/kg</p>
-                            <p class="spec__note">Exceptional energy content</p>
-                        </div>
-                    </div>
-                    <div class="spec card">
-                        <div class="card__body">
-                            <h4>Raw Material Input</h4>
-                            <p class="spec__value">15,000 tons</p>
-                            <p class="spec__note">Cotton stalks annually</p>
-                        </div>
-                    </div>
-                    <div class="spec card">
-                        <div class="card__body">
-                            <h4>Pellet Diameter</h4>
-                            <p class="spec__value">6-12 mm</p>
-                            <p class="spec__note">Optimal combustion size</p>
-                        </div>
-                    </div>
-                    <div class="spec card">
-                        <div class="card__body">
-                            <h4>Ash Content</h4>
-                            <p class="spec__value">&lt;8%</p>
-                            <p class="spec__note">Low residue premium grade</p>
-                        </div>
-                    </div>
-                    <div class="spec card">
-                        <div class="card__body">
-                            <h4>Moisture Content</h4>
-                            <p class="spec__value">&lt;14%</p>
-                            <p class="spec__note">Optimal storage stability</p>
-                        </div>
-                    </div>
-                    <div class="spec card">
-                        <div class="card__body">
-                            <h4>Bulk Density</h4>
-                            <p class="spec__value">1120 kg/m³</p>
-                            <p class="spec__note">Efficient transportation</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="technical__machinery">
-                    <h3 class="subsection__title">Advanced Manufacturing Equipment</h3>
-                    <div class="machinery__grid">
-                        <div class="machinery__item card">
-                            <div class="card__body">
-                                <h4> Collection & Preprocessing</h4>
-                                <p>Advanced cotton stalk collection equipment for efficient raw material gathering and initial processing preparation.</p>
-                            </div>
-                        </div>
-                        <div class="machinery__item card">
-                            <div class="card__body">
-                                <h4> Hammer Mill System</h4>
-                                <p>High-efficiency grinding operations for optimal particle size reduction and consistent pellet quality preparation.</p>
-                            </div>
-                        </div>
-                        <div class="machinery__item card">
-                            <div class="card__body">
-                                <h4> Rotary Dryer</h4>
-                                <p>Precision moisture control system ensuring optimal moisture content for superior pellet formation and stability.</p>
-                            </div>
-                        </div>
-                        <div class="machinery__item card">
-                            <div class="card__body">
-                                <h4> Ring Die Pellet Mill</h4>
-                                <p>High-efficiency pelletizing system producing consistent, high-density pellets with superior binding characteristics.</p>
-                            </div>
-                        </div>
-                        <div class="machinery__item card">
-                            <div class="card__body">
-                                <h4> Automated Screening & Packaging</h4>
-                                <p>Quality control screening and automatic packaging systems ensuring product consistency and efficient distribution.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Environmental Impact -->
-        <section class="environmental fade-in-up" id="environmental">
-            <div class="container">
-                <h2 class="section__title">Quantified Environmental Impact</h2>
-                <p class="section__subtitle">Measurable positive environmental benefits through agricultural waste utilization and emission reduction.</p>
-                
-                <div class="environmental__chart">
-                    <img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/c311ad294f821bb468838827f798aa07/3ed0b1e7-f95c-4126-b969-f4dd5cc5888b/b72e2ba8.png" alt="Environmental Impact Metrics" class="chart__full-width">
-                </div>
-
-                <div class="environmental__benefits">
-                    <div class="environmental__grid">
-                        <div class="env-benefit card">
-                            <div class="card__body">
-                                <div class="benefit__icon">🌍</div>
-                                <h4>CO₂ Emissions Avoided</h4>
-                                <p class="benefit__value">15,000-18,000 tons annually</p>
-                                <p>Equivalent to removing 3,000+ cars from roads annually through biomass substitution for fossil fuels.</p>
-                            </div>
-                        </div>
-                        <div class="env-benefit card">
-                            <div class="card__body">
-                                <div class="benefit__icon">🌬️</div>
-                                <h4>PM2.5 Prevention</h4>
-                                <p class="benefit__value">~100 tons annually</p>
-                                <p>Significant reduction in particulate matter emissions improving air quality in rural and urban areas.</p>
-                            </div>
-                        </div>
-                        <div class="env-benefit card">
-                            <div class="card__body">
-                                <div class="benefit__icon">♻️</div>
-                                <h4>Waste Utilization</h4>
-                                <p class="benefit__value">15,000 tons cotton stalks</p>
-                                <p>Converting agricultural waste into valuable energy resource, preventing open field burning.</p>
-                            </div>
-                        </div>
-                        <div class="env-benefit card">
-                            <div class="card__body">
-                                <div class="benefit__icon">🌳</div>
-                                <h4>Forest Conservation</h4>
-                                <p class="benefit__value">750-900 trees equivalent</p>
-                                <p>Biomass energy reducing pressure on forest resources and supporting biodiversity conservation.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="environmental__regional">
-                    <h3 class="subsection__title">Regional Environmental Benefits</h3>
-                    <div class="regional__stats">
-                        <div class="regional__stat card">
-                            <div class="card__body">
-                                <h4>Telangana Impact</h4>
-                                <p>Reducing state's 66.56 Mt CO₂e emissions through sustainable biomass utilization and stubble burning prevention.</p>
-                            </div>
-                        </div>
-                        <div class="regional__stat card">
-                            <div class="card__body">
-                                <h4>Air Quality Improvement</h4>
-                                <p>Reducing PM2.5, NOx, and black carbon emissions contributing to cleaner air in agricultural regions.</p>
-                            </div>
-                        </div>
-                        <div class="regional__stat card">
-                            <div class="card__body">
-                                <h4>Soil Health</h4>
-                                <p>Preventing soil nutrient loss and degradation caused by traditional agricultural waste burning practices.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Market Opportunity Section -->
-        <section class="market fade-in-up" id="market">
-            <div class="container">
-                <h2 class="section__title">Massive Market Opportunity</h2>
-                <p class="section__subtitle">Unprecedented growth potential in India's rapidly expanding biomass energy sector with strong government support and carbon trading mechanisms.</p>
-                
-                <div class="market__charts">
-                    <div class="chart__container">
-                        <h3>Cotton Production Leadership</h3>
-                        <div class="chart__content">
-                            <div class="chart__icon">🥉</div>
-                            <div class="chart__value">3rd Rank</div>
-                            <div class="chart__label">Telangana in India</div>
-                            <div class="chart__detail">50.79 lakh bales production</div>
-                        </div>
-                        <p class="chart__note">Telangana ranks 3rd in cotton production with 44.78 lakh acres under cultivation, providing abundant raw material supply chain.</p>
-                    </div>
-                    
-                    <div class="chart__container">
-                        <h3>Biomass Co-firing Mandate</h3>
-                        <div class="chart__content">
-                            <div class="chart__icon">📈</div>
-                            <div class="chart__value">5% → 10%</div>
-                            <div class="chart__label">Mandate Growth by 2025-26</div>
-                            <div class="chart__detail">71 thermal power plants</div>
-                        </div>
-                        <p class="chart__note">Government mandate increasing from 5% to 10% biomass co-firing, creating massive demand for quality pellets.</p>
-                    </div>
-                    
-                    <div class="chart__container">
-                        <h3>Market Size Potential</h3>
-                        <div class="chart__content">
-                            <div class="chart__icon">💹</div>
-                            <div class="chart__value">₹28K-35K Cr</div>
-                            <div class="chart__label">Serviceable Market</div>
-                            <div class="chart__detail">5.27% CAGR growth</div>
-                        </div>
-                        <p class="chart__note">Serviceable Available Market (SAM) of ₹28,000-35,000 crores for biomass pellet manufacturers with robust growth trajectory.</p>
-                    </div>
-                </div>
-                
-                <div class="market__stats">
-                    <div class="stat-grid">
-                        <div class="stat-item card">
-                            <div class="card__body">
-                                <span class="stat-number" data-target="71">0</span>
-                                <span class="stat-label">Thermal Power Plants using Co-firing</span>
-                            </div>
-                        </div>
-                        <div class="stat-item card">
-                            <div class="card__body">
-                                <span class="stat-number" data-target="10">0</span>
-                                <span class="stat-label">% Co-firing Mandate by 2025-26</span>
-                            </div>
-                        </div>
-                        <div class="stat-item card">
-                            <div class="card__body">
-                                <span class="stat-number" data-target="40">0</span>
-                                <span class="stat-label">Million tonnes Biomass Demand</span>
-                            </div>
-                        </div>
-                        <div class="stat-item card">
-                            <div class="card__body">
-                                <span class="stat-number" data-target="35">0</span>
-                                <span class="stat-label">Lakh tons Telangana Biomass Potential</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Financial Projections & Investment Opportunity -->
-        <section class="investment fade-in-up" id="investment">
-            <div class="container">
-                <h2 class="section__title">Investment Opportunity</h2>
-                <p class="section__subtitle">Attractive returns through dual revenue streams, government support, and rapidly growing market demand.</p>
-                
-                <div class="investment__chart">
-                    <img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/c311ad294f821bb468838827f798aa07/2682af5a-9e5d-4ec3-8d04-944955a5537d/784e6956.png" alt="Revenue Model - Dual Income Streams" class="chart__full-width">
-                </div>
-
-                <div class="investment__highlights">
-                    <div class="highlights__grid">
-                        <div class="highlight card">
-                            <div class="card__body">
-                                <h4> Primary Revenue Stream</h4>
-                                <p class="highlight__value">Rs. 1-3 crores annually</p>
-                                <p>Biomass pellet sales to thermal power plants with guaranteed off-take agreements and competitive pricing.</p>
-                            </div>
-                        </div>
-                        <div class="highlight card">
-                            <div class="card__body">
-                                <h4> Carbon Credit Revenue</h4>
-                                <p class="highlight__value">Rs. 1-2 crores annually</p>
-                                <p>Additional income through CCTS 2023 eligible carbon credit trading and voluntary market participation.</p>
-                            </div>
-                        </div>
-                        <div class="highlight card">
-                            <div class="card__body">
-                                <h4> Total Revenue Potential</h4>
-                                <p class="highlight__value">Rs. 2-5 crores annually</p>
-                                <p>Combined revenue streams providing robust cash flows and attractive investment returns.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="investment__metrics">
-                    <h3 class="subsection__title">Key Investment Metrics</h3>
-                    <div class="metrics__grid">
-                        <div class="metric card">
-                            <div class="card__body">
-                                <h4> Quick ROI</h4>
-                                <p>Rapid return on investment with payback period optimized through dual revenue streams and government incentives.</p>
-                            </div>
-                        </div>
-                        <div class="metric card">
-                            <div class="card__body">
-                                <h4> Attractive IRR</h4>
-                                <p>Internal Rate of Return demonstrating strong project viability and investor value creation potential.</p>
-                            </div>
-                        </div>
-                        <div class="metric card">
-                            <div class="card__body">
-                                <h4> Robust Profitability</h4>
-                                <p>Strong gross profit margins with efficient operations scaling to robust net profitability by Year 3.</p>
-                            </div>
-                        </div>
-                        <div class="metric card">
-                            <div class="card__body">
-                                <h4> Government Support</h4>
-                                <p>MNRE schemes, TSREDCO guidance, and policy framework ensuring favorable business environment.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="investment__cta">
-                    <div class="cta__content">
-                        <h3>Join the Renewable Energy Revolution</h3>
-                        <p>Partner with Tarunati Industries for exceptional returns, positive environmental impact, and participation in India's clean energy transformation.</p>
-                        <div class="cta__actions">
-                            <a href="mailto:hello@tarunatiindustries.com" class="btn btn--primary btn--lg" target="_blank">
-                                Request Investment Deck
-                            </a>
-                            <a href="mailto:hello@tarunatiindustries.com" class="btn btn--outline btn--lg" target="_blank">
-                                Schedule Investor Call
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Location Advantages -->
-        <section class="location fade-in-up" id="location">
-            <div class="container">
-                <h2 class="section__title">Strategic Location - Khammam, Telangana</h2>
-                <p class="section__subtitle">Perfectly positioned for optimal supply chain efficiency, market access, and operational excellence.</p>
-                
-                <div class="location__content">
-                    <div class="location__advantages">
-                        <div class="advantage card">
-                            <div class="card__body">
-                                <h4> Local Expertise & Heritage</h4>
-                                <p>Both founders are natives of Khammam with deep understanding of regional agriculture, local business landscape, farmer networks, and community relationships built over decades.</p>
-                            </div>
-                        </div>
-                        <div class="advantage card">
-                            <div class="card__body">
-                                <h4> Abundant Raw Material Supply</h4>
-                                <p>Khammam is the largest cotton-producing district in Telangana, ensuring consistent, high-quality cotton stalk supply throughout the year with proximity to 44.78 lakh acres under cultivation.</p>
-                            </div>
-                        </div>
-                        <div class="advantage card">
-                            <div class="card__body">
-                                <h4> Superior Infrastructure Connectivity</h4>
-                                <p>Excellent transportation network with National Highways, major railway connections, and port access providing seamless logistics for raw material procurement and product distribution.</p>
-                            </div>
-                        </div>
-                        <div class="advantage card">
-                            <div class="card__body">
-                                <h4> Power Plant Proximity</h4>
-                                <p>TSGENCO power plants within 120 km radius, all Telangana TPPs within 200 km, ensuring minimal transportation costs, optimal delivery times, and strong customer relationships.</p>
-                            </div>
-                        </div>
-                        <div class="advantage card">
-                            <div class="card__body">
-                                <h4> Government Support</h4>
-                                <p>TSREDCO technical guidance, state policy support, environmental clearances facilitation, and access to renewable energy incentive schemes and financial assistance programs.</p>
-                            </div>
-                        </div>
-                        <div class="advantage card">
-                            <div class="card__body">
-                                <h4> Cost Efficiency</h4>
-                                <p>Lower operational costs through reduced transportation expenses, competitive land prices, available skilled workforce, and proximity to both suppliers and customers.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="location__visual">
-                        <img src="https://pplx-res.cloudinary.com/image/upload/v1757064418/pplx_project_search_images/ff6c3aae83476f92e17c2d2d315aa26452ee683d.png" alt="Modern Sustainable Manufacturing Facility" class="facility__image">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="contact fade-in-up" id="contact">
-            <div class="container">
-                <h2 class="section__title">Partner with Tarunati Industries</h2>
-                <p class="section__subtitle">Join us in building a sustainable future and capitalizing on the renewable energy revolution with carbon credit monetization.</p>
-                
-                <div class="contact__content">
-                    <div class="contact__info">
-                        <div class="contact__item card">
-                            <div class="card__body">
-                                <h4>For Power Plants & Energy Companies</h4>
-                                <p>Looking for reliable biomass pellet supply to meet government co-firing mandates and carbon reduction targets? We offer consistent quality, competitive pricing, guaranteed delivery schedules, and carbon credit support.</p>
-                                <a href="mailto:powerplants@tarunatiindustries.com" class="btn btn--primary" target="_blank">Request Supply Quote</a>
-                            </div>
-                        </div>
-                        
-                        <div class="contact__item card">
-                            <div class="card__body">
-                                <h4>For Investors & Financial Partners</h4>
-                                <p>Join the renewable energy revolution with exceptional returns through dual revenue streams (pellets + carbon credits), strong market potential, government support, and significant environmental impact.</p>
-                                <a href="mailto:hello@tarunatiindustries.com" class="btn btn--outline" target="_blank">Investment Inquiry</a>
-                            </div>
-                        </div>
-                        
-                      <!-- <div class="contact__item card">
-                            <div class="card__body">
-                                <h4>For Carbon Credit Buyers</h4>
-                                <p>Seeking verified carbon offsets for your sustainability goals? Our CCTS 2023 eligible credits offer measurable environmental impact through agricultural waste utilization and emission reductions.</p>
-                                <a href="mailto:hello@tarunatiindustries.com" class="btn btn--primary" target="_blank">Carbon Credits Inquiry</a>
-                            </div>
-                        </div> --> 
-                        
-                        <div class="contact__item card">
-                            <div class="card__body">
-                                <h4>General Contact & Information</h4>
-                                <div class="contact__details">
-                                    <p><strong>Location:</strong> Khammam, Telangana 507003, India</p>
-                                    <p><strong>Primary:</strong> hello@tarunatiindustries.com</p>
-                                    <p><strong>Investors:</strong> hello@tarunatiindustries.com</p>
-                                    <p><strong>Phone:</strong> +91-9959509808</p>
-                                    <p><strong>Website:</strong> www.tarunatiindustries.com</p>
-                                </div>
-                                <a href="mailto:hello@tarunatiindustries.com" class="btn btn--outline" target="_blank">Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__content">
-                <div class="footer__brand">
-                    <div class="footer__logo">T</div>
-                    <h4>Tarunati Industries Private Limited</h4>
-                    <p>Moving in the direction of sustainable growth through innovative agricultural waste management, renewable energy solutions, and carbon credit generation for a cleaner tomorrow.</p>
-                </div>
-                <div class="footer__column">
-                    <h5>Company</h5>
-                    <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#solution">Our Solution</a></li>
-                        <li><a href="#carbon-credits">Carbon Credits</a></li>
-                        <li><a href="#technical">Technical Specs</a></li>
-                        <li><a href="#investment">Investment</a></li>
-                    </ul>
-                </div>
-                <div class="footer__column">
-                    <h5>Services</h5>
-                    <ul>
-                        <li>Cotton Stalk Pellets</li>
-                        <li>Biomass Processing</li>
-                        <li>Carbon Credit Trading</li>
-                        <li>Sustainable Energy Solutions</li>
-                        <li>Environmental Consulting</li>
-                    </ul>
-                </div>
-                <div class="footer__column">
-                    <h5>Contact</h5>
-                    <ul>
-                        <li>Khammam, Telangana, India</li>
-                        <li>hello@tarunatiindustries.com</li>
-                        <li>hello@tarunatiindustries.com</li>
-                        <li>+91-9959509808</li>
-                        <li>www.tarunatiindustries.com</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer__bottom">
-                <p>&copy; 2025 Tarunati Industries Private Limited. All rights reserved. | Sustainable Energy Solutions | Carbon Credits Trading | CCTS 2023 Eligible</p>
-            </div>
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <div class="section-label reveal">Our Story</div>
+        <h2 class="section-title reveal">Built on a<br><span class="gold-text">Mission for<br>Clean Energy</span></h2>
+        <p class="section-sub reveal">Tarunati Industries was founded with a singular vision: harness the enormous agricultural biomass potential of Telangana and convert it into industrial-grade renewable fuel that powers India's factories cleanly.</p>
+        <div class="vision-mission reveal reveal-delay-2">
+          <div class="vm-card">
+            <div class="vm-label">Our Vision</div>
+            <p class="vm-text">To become India's leading biomass fuel company, enabling every industry to transition from coal to clean, renewable agricultural energy.</p>
+          </div>
+          <div class="vm-card">
+            <div class="vm-label">Our Mission</div>
+            <p class="vm-text">Manufacture premium biomass briquettes and pellets at consistent quality and scale, while creating rural livelihoods and reducing agricultural waste burning.</p>
+          </div>
         </div>
-    </footer>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">THE IDEA</div>
+            <div class="tl-title">Recognizing the Opportunity</div>
+            <div class="tl-desc">Khammam district of Telangana — a biomass goldmine with saw dust, rice husk, cotton stalk, and palm residue abundantly available year-round from 200+ km radius.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">FOUNDATION</div>
+            <div class="tl-title">Tarunati Industries Incorporated</div>
+            <div class="tl-desc">Incorporated as a SC Women-Led Enterprise, registered under MSME, and recognized as a startup under DPIIT with a ₹76.9 Lakh initial project investment.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">INFRASTRUCTURE</div>
+            <div class="tl-title">15,000 SFT Facility Operational</div>
+            <div class="tl-desc">Complete manufacturing facility with briquette line, pellet line, industrial dryer, dust separator, and quality testing laboratory set up in Khammam.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">SCALE-UP</div>
+            <div class="tl-title">5,000 Ton Annual Capacity</div>
+            <div class="tl-desc">Full-scale production achieving 5,000 metric tons annual capacity with consistent 3800–4500 GCV fuel quality, serving industries across Telangana and beyond.</div>
+          </div>
+        </div>
+        <div class="about-card-big" style="margin-top:32px">
+          <div style="font-size:13px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px">Why Khammam?</div>
+          <p style="font-size:15px;color:var(--text-muted);line-height:1.7">Khammam sits at the heart of Telangana's agricultural belt — surrounded by rice mills, saw mills, cotton fields, and palm plantations. This proximity to raw materials enables <strong style="color:var(--text-primary)">year-round uninterrupted production</strong> at lower logistics costs than any other location in the state.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Scripts -->
-    <script src="app.js"></script>
+<!-- FEEDSTOCK -->
+<section id="feedstock">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Raw Materials</div>
+      <h2 class="section-title">Biomass Feedstock <span class="gold-text">Ecosystem</span></h2>
+      <p class="section-sub">Click on any feedstock to explore its GCV, availability, and industrial suitability.</p>
+    </div>
+    <div class="feedstock-grid reveal reveal-delay-1" id="feedstock-grid"></div>
+    <div class="feedstock-detail" id="feedstock-detail"></div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Our Products</div>
+      <h2 class="section-title">Premium Biomass <span class="gold-text">Fuel Products</span></h2>
+      <p class="section-sub">Engineered for peak industrial combustion performance. Consistent quality, reliable supply, competitive pricing.</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card reveal reveal-delay-1">
+        <div class="product-visual product-visual-briquette">
+          <div class="product-3d">🟤</div>
+          <div class="product-badge">Best Seller</div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Biomass Briquettes</div>
+          <p style="color:var(--text-muted);font-size:14px;line-height:1.6;margin-bottom:16px">High-density cylindrical biomass fuel blocks engineered for industrial boilers, furnaces, and steam generation units.</p>
+          <div class="product-specs">
+            <div class="spec-item"><div class="spec-val">90mm</div><div class="spec-label">Diameter</div></div>
+            <div class="spec-item"><div class="spec-val">3900+</div><div class="spec-label">GCV (Kcal/kg)</div></div>
+            <div class="spec-item"><div class="spec-val">&lt;10%</div><div class="spec-label">Moisture</div></div>
+            <div class="spec-item"><div class="spec-val">High</div><div class="spec-label">Density</div></div>
+          </div>
+          <div class="product-tags">
+            <span class="tag">Industrial Boilers</span>
+            <span class="tag">Steam Generation</span>
+            <span class="tag">Process Heat</span>
+          </div>
+        </div>
+      </div>
+      <div class="product-card reveal reveal-delay-2">
+        <div class="product-visual product-visual-pellet">
+          <div class="product-3d">🟢</div>
+          <div class="product-badge">Premium Grade</div>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Biomass Pellets</div>
+          <p style="color:var(--text-muted);font-size:14px;line-height:1.6;margin-bottom:16px">Premium uniform cylindrical pellets with high combustion efficiency, ideal for automated feeding systems and high-precision industrial applications.</p>
+          <div class="product-specs">
+            <div class="spec-item"><div class="spec-val">6–20mm</div><div class="spec-label">Diameter Range</div></div>
+            <div class="spec-item"><div class="spec-val">4300+</div><div class="spec-label">GCV (Kcal/kg)</div></div>
+            <div class="spec-item"><div class="spec-val">&lt;8%</div><div class="spec-label">Moisture</div></div>
+            <div class="spec-item"><div class="spec-val">Very High</div><div class="spec-label">Combustion Eff.</div></div>
+          </div>
+          <div class="product-tags">
+            <span class="tag">Auto Feed Systems</span>
+            <span class="tag">Ceramic Kilns</span>
+            <span class="tag">Food Processing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Manufacturing</div>
+      <h2 class="section-title">Production <span class="gold-text">Excellence</span></h2>
+      <p class="section-sub">A rigorously controlled 7-stage manufacturing process ensuring consistent quality and reliable supply at every batch.</p>
+    </div>
+    <div class="process-flow" id="processFlow"></div>
+  </div>
+</section>
+
+<!-- INFRASTRUCTURE -->
+<section id="infrastructure">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Our Facility</div>
+      <h2 class="section-title">Plant <span class="gold-text">Infrastructure</span></h2>
+      <p class="section-sub">15,000 sq.ft. state-of-the-art manufacturing facility in Khammam, Telangana.</p>
+    </div>
+    <div class="infra-grid">
+      <div class="reveal reveal-delay-1">
+        <div class="facility-map">
+          <div style="font-size:12px;color:var(--text-muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px">Facility Layout — Aerial View</div>
+          <div class="facility-zones">
+            <div class="zone highlight" style="grid-column:span 2">
+              <div class="zone-icon">🏭</div>
+              <div class="zone-label">Main Manufacturing Hall</div>
+              <div class="zone-size">8,000 SFT</div>
+            </div>
+            <div class="zone">
+              <div class="zone-icon">🌡️</div>
+              <div class="zone-label">Dryer System</div>
+              <div class="zone-size">Industrial Grade</div>
+            </div>
+            <div class="zone">
+              <div class="zone-icon">⚙️</div>
+              <div class="zone-label">Briquette Line</div>
+              <div class="zone-size">90mm Press</div>
+            </div>
+            <div class="zone">
+              <div class="zone-icon">🔩</div>
+              <div class="zone-label">Pellet Line</div>
+              <div class="zone-size">6–20mm</div>
+            </div>
+            <div class="zone">
+              <div class="zone-icon">💨</div>
+              <div class="zone-label">Dust Separator</div>
+              <div class="zone-size">Cyclone Type</div>
+            </div>
+            <div class="zone">
+              <div class="zone-icon">🔬</div>
+              <div class="zone-label">QC Laboratory</div>
+              <div class="zone-size">In-House Testing</div>
+            </div>
+            <div class="zone">
+              <div class="zone-icon">📦</div>
+              <div class="zone-label">Storage Yard</div>
+              <div class="zone-size">Covered, Dry</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="infra-stats reveal reveal-delay-2">
+        <div class="infra-stat-card">
+          <div class="is-val">15,000</div>
+          <div class="is-label">Square Feet — Total Facility Area</div>
+        </div>
+        <div class="infra-stat-card">
+          <div class="is-val">2 Lines</div>
+          <div class="is-label">Briquette + Pellet Production Lines</div>
+        </div>
+        <div class="infra-stat-card">
+          <div class="is-val">Industrial</div>
+          <div class="is-label">Grade Rotary Drum Dryer System</div>
+        </div>
+        <div class="infra-stat-card">
+          <div class="is-val">In-House</div>
+          <div class="is-label">QC Laboratory with GCV Testing</div>
+        </div>
+        <div class="infra-stat-card">
+          <div class="is-val">200+ km</div>
+          <div class="is-label">Biomass Procurement Radius</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUALITY -->
+<section id="quality">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Quality Assurance</div>
+      <h2 class="section-title">Industrial <span class="gold-text">Grade Standards</span></h2>
+      <p class="section-sub">Every batch tested and certified before dispatch. Zero compromise on quality.</p>
+    </div>
+    <div class="quality-dash">
+      <div class="quality-params reveal reveal-delay-1">
+        <div class="qp-item">
+          <div class="qp-header"><span class="qp-name">Gross Calorific Value (GCV)</span><span class="qp-val">3800+ Kcal/kg</span></div>
+          <div class="qp-bar-bg"><div class="qp-bar" style="width:82%" data-width="82"></div></div>
+        </div>
+        <div class="qp-item">
+          <div class="qp-header"><span class="qp-name">Moisture Content</span><span class="qp-val">&lt;10%</span></div>
+          <div class="qp-bar-bg"><div class="qp-bar" style="width:90%" data-width="90"></div></div>
+        </div>
+        <div class="qp-item">
+          <div class="qp-header"><span class="qp-name">Bulk Density</span><span class="qp-val">650+ kg/m³</span></div>
+          <div class="qp-bar-bg"><div class="qp-bar" style="width:75%" data-width="75"></div></div>
+        </div>
+        <div class="qp-item">
+          <div class="qp-header"><span class="qp-name">Ash Content</span><span class="qp-val">&lt;8%</span></div>
+          <div class="qp-bar-bg"><div class="qp-bar" style="width:88%" data-width="88"></div></div>
+        </div>
+        <div class="qp-item">
+          <div class="qp-header"><span class="qp-name">Combustion Efficiency</span><span class="qp-val">92%+</span></div>
+          <div class="qp-bar-bg"><div class="qp-bar" style="width:92%" data-width="92"></div></div>
+        </div>
+        <div class="qp-item">
+          <div class="qp-header"><span class="qp-name">Dimensional Consistency</span><span class="qp-val">±2mm</span></div>
+          <div class="qp-bar-bg"><div class="qp-bar" style="width:95%" data-width="95"></div></div>
+        </div>
+      </div>
+      <div class="quality-certifications reveal reveal-delay-2">
+        <div class="section-label">Certifications & Recognition</div>
+        <h3 style="font-size:24px;font-weight:700;margin-bottom:8px">Verified Quality,<br>Trusted by Industry</h3>
+        <p style="font-size:14px;color:var(--text-muted);line-height:1.6">Every lot is tested for GCV, moisture, ash content, and dimensional accuracy before leaving our facility. Our standards meet and exceed industrial fuel requirements.</p>
+        <div class="cert-grid">
+          <div class="cert-item">
+            <div class="cert-icon">🏛️</div>
+            <div class="cert-name">DPIIT Recognized</div>
+            <div class="cert-desc">Startup India registered renewable energy startup</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-icon">🏅</div>
+            <div class="cert-name">MSME Registered</div>
+            <div class="cert-desc">Government certified micro, small & medium enterprise</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-icon">♀️</div>
+            <div class="cert-name">Women-Led Enterprise</div>
+            <div class="cert-desc">SC Women Entrepreneur — government priority sector</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-icon">🌱</div>
+            <div class="cert-name">Renewable Energy</div>
+            <div class="cert-desc">Categorized under renewable energy sector by MNRE</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-icon">🔬</div>
+            <div class="cert-name">In-House Lab</div>
+            <div class="cert-desc">Dedicated quality testing laboratory at facility</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-icon">📋</div>
+            <div class="cert-name">Batch Certificates</div>
+            <div class="cert-desc">Quality test report issued with every dispatch lot</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT COUNTERS -->
+<section id="impact">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:0">
+      <div class="section-label" style="justify-content:center">Environmental Impact</div>
+      <h2 class="section-title">Our <span class="gold-text">Positive Impact</span></h2>
+      <p class="section-sub" style="margin:0 auto">Every ton of biomass fuel we produce creates measurable positive change. Live metrics of our collective impact.</p>
+    </div>
+    <div class="impact-counters reveal reveal-delay-1">
+      <div class="counter-item">
+        <div class="counter-icon">🌾</div>
+        <div class="counter-val" data-target="12500" data-suffix=" MT" id="c1">0</div>
+        <div class="counter-label">Agricultural Waste<br>Recycled (MT)</div>
+      </div>
+      <div class="counter-item">
+        <div class="counter-icon">⛏️</div>
+        <div class="counter-val" data-target="8200" data-suffix=" MT" id="c2">0</div>
+        <div class="counter-label">Coal Replaced<br>(Metric Tons)</div>
+      </div>
+      <div class="counter-item">
+        <div class="counter-icon">🌍</div>
+        <div class="counter-val" data-target="18600" data-suffix=" T" id="c3">0</div>
+        <div class="counter-label">CO₂ Reduction<br>(Tons)</div>
+      </div>
+      <div class="counter-item">
+        <div class="counter-icon">⚡</div>
+        <div class="counter-val" data-target="42" data-suffix="M kcal" id="c4">0</div>
+        <div class="counter-label">Renewable Energy<br>Produced</div>
+      </div>
+      <div class="counter-item">
+        <div class="counter-icon">🌳</div>
+        <div class="counter-val" data-target="3100" data-suffix="+" id="c5">0</div>
+        <div class="counter-label">Tree Equivalents<br>Saved</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section id="industries">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Market Sectors</div>
+      <h2 class="section-title">Industries <span class="gold-text">We Serve</span></h2>
+      <p class="section-sub">Hover over each sector to see how biomass fuel transforms their operations.</p>
+    </div>
+    <div class="industries-grid" id="industriesGrid"></div>
+  </div>
+</section>
+
+<!-- MARKET OPPORTUNITY -->
+<section id="market">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Investor Intelligence</div>
+      <h2 class="section-title">Market <span class="gold-text">Opportunity</span></h2>
+      <p class="section-sub">India's biomass energy market is at an inflection point. The opportunity is massive, the timing is perfect.</p>
+    </div>
+    <div class="market-grid">
+      <div class="chart-card reveal reveal-delay-1">
+        <div class="chart-title">India Biomass Market Growth</div>
+        <div class="chart-sub">Market size projection 2023–2030 (₹ Crore)</div>
+        <div class="chart-container"><canvas id="marketChart"></canvas></div>
+        <div class="market-stats">
+          <div class="mstat"><div class="mstat-val">₹32,000 Cr</div><div class="mstat-label">Market Size 2030E</div></div>
+          <div class="mstat"><div class="mstat-val">18.4%</div><div class="mstat-label">CAGR 2023–30</div></div>
+        </div>
+      </div>
+      <div class="chart-card reveal reveal-delay-2">
+        <div class="chart-title">Coal Replacement Potential</div>
+        <div class="chart-sub">Industrial sector biomass adoption rate</div>
+        <div class="chart-container"><canvas id="adoptionChart"></canvas></div>
+        <div class="market-stats">
+          <div class="mstat"><div class="mstat-val">500 MT</div><div class="mstat-label">Biomass Potential India</div></div>
+          <div class="mstat"><div class="mstat-val">32 MT</div><div class="mstat-label">Current Utilization</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section id="comparison">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Competitive Advantage</div>
+      <h2 class="section-title">Why Choose <span class="gold-text">Tarunati?</span></h2>
+      <p class="section-sub">See how we stack up against conventional industrial fuel suppliers.</p>
+    </div>
+    <div class="compare-table reveal reveal-delay-1">
+      <table class="ctable">
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th class="highlight-col">✦ Tarunati Industries</th>
+            <th>Coal Suppliers</th>
+            <th>Other Biomass</th>
+            <th>Agro Residue</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Fuel Consistency (GCV)</td>
+            <td class="highlight-col">3800–4500 Kcal/kg ✓</td>
+            <td>3500–5000 (variable)</td>
+            <td>2800–3500 (low)</td>
+            <td>1800–2500 (very low)</td>
+          </tr>
+          <tr>
+            <td>Multiple Feedstocks</td>
+            <td class="highlight-col"><span class="check">✓</span> 8+ Sources</td>
+            <td><span class="cross">✗</span> Coal only</td>
+            <td><span class="cross">✗</span> 1–2 sources</td>
+            <td><span class="partial">~</span> Seasonal only</td>
+          </tr>
+          <tr>
+            <td>Supply Continuity</td>
+            <td class="highlight-col"><span class="check">✓</span> Year-round</td>
+            <td><span class="partial">~</span> Import-dependent</td>
+            <td><span class="cross">✗</span> Seasonal gaps</td>
+            <td><span class="cross">✗</span> Seasonal only</td>
+          </tr>
+          <tr>
+            <td>Environmental Compliance</td>
+            <td class="highlight-col"><span class="check">✓</span> Renewable & clean</td>
+            <td><span class="cross">✗</span> Carbon-heavy</td>
+            <td><span class="check">✓</span> Renewable</td>
+            <td><span class="partial">~</span> Partially</td>
+          </tr>
+          <tr>
+            <td>Quality Test Certification</td>
+            <td class="highlight-col"><span class="check">✓</span> Per-batch COA</td>
+            <td><span class="partial">~</span> Periodic</td>
+            <td><span class="cross">✗</span> Rare</td>
+            <td><span class="cross">✗</span> None</td>
+          </tr>
+          <tr>
+            <td>Technical Support</td>
+            <td class="highlight-col"><span class="check">✓</span> Dedicated team</td>
+            <td><span class="cross">✗</span> None</td>
+            <td><span class="cross">✗</span> Minimal</td>
+            <td><span class="cross">✗</span> None</td>
+          </tr>
+          <tr>
+            <td>DPIIT / MSME Certified</td>
+            <td class="highlight-col"><span class="check">✓</span> Yes</td>
+            <td><span class="cross">✗</span> N/A</td>
+            <td><span class="partial">~</span> Some</td>
+            <td><span class="cross">✗</span> No</td>
+          </tr>
+          <tr>
+            <td>Pricing vs Coal</td>
+            <td class="highlight-col">15–25% Lower</td>
+            <td>Baseline</td>
+            <td>Similar</td>
+            <td>20% Lower</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="leadership">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">The Team</div>
+      <h2 class="section-title">Our <span class="gold-text">Leadership</span></h2>
+      <p class="section-sub">Driven by expertise in biomass processing, industrial operations, and renewable energy development.</p>
+    </div>
+    <div class="leadership-grid">
+      <div class="leader-card reveal reveal-delay-1">
+        <div class="leader-avatar">👩‍💼</div>
+        <div class="leader-info">
+          <div class="leader-name">Founder & Director</div>
+          <div class="leader-role">CEO & Founder</div>
+          <p class="leader-bio">SC Women Entrepreneur and visionary founder of Tarunati Industries. Led the company from concept to operational biomass manufacturing facility in Khammam, Telangana. DPIIT-recognized startup builder with deep roots in Telangana's agricultural community.</p>
+        </div>
+      </div>
+      <div class="leader-card reveal reveal-delay-2">
+        <div class="leader-avatar">👨‍🔬</div>
+        <div class="leader-info">
+          <div class="leader-name">Technical Head</div>
+          <div class="leader-role">Head of Manufacturing</div>
+          <p class="leader-bio">Expert in biomass densification technology with 12+ years in briquette and pellet manufacturing. Oversees all production processes, quality control, and machinery operations at the Khammam facility. Specialist in optimizing multi-feedstock blends.</p>
+        </div>
+      </div>
+      <div class="leader-card reveal reveal-delay-3">
+        <div class="leader-avatar">👨‍💼</div>
+        <div class="leader-info">
+          <div class="leader-name">Business Development</div>
+          <div class="leader-role">Head of Sales & Partnerships</div>
+          <p class="leader-bio">Seasoned industrial sales professional with network across Telangana's paper, textile, ceramic, and food processing industries. Manages key accounts and develops partnerships with industrial boiler operators and energy procurement teams.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section id="highlights">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Project Profile</div>
+      <h2 class="section-title">Key <span class="gold-text">Milestones</span></h2>
+    </div>
+    <div class="highlights-grid">
+      <div class="hl-card reveal reveal-delay-1" data-num="01">
+        <div class="hl-val">₹76.9 L</div>
+        <div class="hl-title">Total Project Investment</div>
+        <div class="hl-desc">Complete project investment covering manufacturing equipment, infrastructure, working capital, and initial procurement. Lean, capital-efficient business model with strong ROI potential.</div>
+      </div>
+      <div class="hl-card reveal reveal-delay-2" data-num="02">
+        <div class="hl-val">5,000 MT</div>
+        <div class="hl-title">Annual Production Capacity</div>
+        <div class="hl-desc">Operational capacity of 5,000 metric tons of biomass briquettes and pellets per year, scalable to 10,000+ MT with additional press lines.</div>
+      </div>
+      <div class="hl-card reveal reveal-delay-3" data-num="03">
+        <div class="hl-val">DPIIT</div>
+        <div class="hl-title">Recognized Startup</div>
+        <div class="hl-desc">Officially recognized under Startup India by DPIIT. Eligible for government tenders, renewable energy subsidies, and priority banking support under MSME framework.</div>
+      </div>
+      <div class="hl-card reveal reveal-delay-1" data-num="04">
+        <div class="hl-val">SC WLE</div>
+        <div class="hl-title">Women-Led Enterprise</div>
+        <div class="hl-desc">Scheduled Caste Women-Led Enterprise — a priority category for government procurement programs, NABARD financing, and renewable energy mission projects under state and central schemes.</div>
+      </div>
+      <div class="hl-card reveal reveal-delay-2" data-num="05">
+        <div class="hl-val">8+</div>
+        <div class="hl-title">Biomass Feedstock Sources</div>
+        <div class="hl-desc">Diversified feedstock procurement from 8+ agricultural sources across a 200 km radius — providing resilient, cost-effective, and year-round raw material supply security.</div>
+      </div>
+      <div class="hl-card reveal reveal-delay-3" data-num="06">
+        <div class="hl-val">200+</div>
+        <div class="hl-title">km Procurement Network</div>
+        <div class="hl-desc">Extensive raw material procurement network covering Khammam, Nalgonda, Suryapet, and surrounding districts — ensuring consistent supply availability throughout the year.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Trust & Credibility</div>
+      <h2 class="section-title">Industry <span class="gold-text">Confidence</span></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testi-card reveal reveal-delay-1">
+        <p class="testi-text">Tarunati's biomass briquettes have replaced nearly 80% of our coal consumption. The GCV consistency is remarkable — exactly what our steam boilers require for optimal pressure maintenance.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">SR</div>
+          <div><div class="testi-name">Suresh Reddy</div><div class="testi-org">Plant Manager, Rice Mill — Khammam</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-2">
+        <p class="testi-text">We've been sourcing biomass fuel from multiple vendors for 5 years. Tarunati stands out for supply reliability and the quality test certificate they provide with each lot — exactly what our procurement audit requires.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">VK</div>
+          <div><div class="testi-name">Vijay Kumar</div><div class="testi-org">Energy Manager, Textile Unit — Warangal</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-3">
+        <p class="testi-text">Switching to Tarunati biomass pellets cut our fuel cost by 22% in the first year. The ceramic kiln performance has actually improved — better heat distribution and significantly less ash cleaning.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">PM</div>
+          <div><div class="testi-name">Prakash Mohan</div><div class="testi-org">Operations Director, Ceramic Works — Hyderabad</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="partners-strip reveal">
+      <div class="partners-label">Recognized & Registered With</div>
+      <div class="partners-logos">
+        <div class="partner-logo">Startup India / DPIIT</div>
+        <div class="partner-logo">MSME Ministry</div>
+        <div class="partner-logo">Telangana State Govt</div>
+        <div class="partner-logo">NABARD</div>
+        <div class="partner-logo">Renewable Energy Sector</div>
+        <div class="partner-logo">MNRE India</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-content">
+      <div class="reveal">
+        <div class="section-label" style="justify-content:center">Partner With Us</div>
+        <h2 class="contact-title">Let's Build a <span class="gold-text">Cleaner Industrial<br>Future</span> Together</h2>
+        <p class="contact-sub">Whether you're an industrial fuel buyer, investor, government partner, or bank — we're ready to power your vision with renewable biomass energy.</p>
+      </div>
+      <div class="contact-ctas reveal reveal-delay-1">
+        <a href="mailto:info@tarunatiindustries.com" class="btn-primary">Request Supply Quote</a>
+        <a href="mailto:partners@tarunatiindustries.com" class="btn-outline">Become a Partner</a>
+        <a href="tel:+91" class="btn-ghost">Schedule a Meeting</a>
+        <a href="#" class="btn-ghost">Visit Our Facility</a>
+      </div>
+      <div class="contact-info reveal reveal-delay-2">
+        <div class="ci-card">
+          <div class="ci-icon">📍</div>
+          <div class="ci-label">Location</div>
+          <div class="ci-val">Khammam, Telangana<br>India — 507 001</div>
+        </div>
+        <div class="ci-card">
+          <div class="ci-icon">📧</div>
+          <div class="ci-label">Email Us</div>
+          <div class="ci-val">info@tarunatiindustries.com<br>sales@tarunatiindustries.com</div>
+        </div>
+        <div class="ci-card">
+          <div class="ci-icon">🏛️</div>
+          <div class="ci-label">Registered As</div>
+          <div class="ci-val">DPIIT Startup · MSME Regd.<br>SC Women-Led Enterprise</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Tarunati Industries</div>
+        <div class="footer-brand-sub">Pvt Ltd · Renewable Biomass Energy</div>
+        <p class="footer-brand-desc">Transforming agricultural residue into premium renewable industrial fuel. Biomass briquettes and pellets manufactured in Khammam, Telangana for industries across India.</p>
+        <div style="margin-top:24px;display:flex;flex-wrap:wrap;gap:8px">
+          <div class="fbadge">DPIIT Startup</div>
+          <div class="fbadge">MSME Regd</div>
+          <div class="fbadge">SC WLE</div>
+          <div class="fbadge">Telangana</div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Products</div>
+        <ul class="footer-links">
+          <li><a href="#products">Biomass Briquettes</a></li>
+          <li><a href="#products">Biomass Pellets</a></li>
+          <li><a href="#quality">Quality Standards</a></li>
+          <li><a href="#feedstock">Feedstock Sources</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#process">Our Process</a></li>
+          <li><a href="#infrastructure">Facility</a></li>
+          <li><a href="#leadership">Leadership</a></li>
+          <li><a href="#highlights">Certifications</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">For Investors</div>
+        <ul class="footer-links">
+          <li><a href="#market">Market Opportunity</a></li>
+          <li><a href="#highlights">Project Profile</a></li>
+          <li><a href="#comparison">Competitive Edge</a></li>
+          <li><a href="#impact">Impact Metrics</a></li>
+          <li><a href="#contact">Investor Inquiry</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2024 Tarunati Industries Pvt Ltd. All rights reserved. Khammam, Telangana, India.</div>
+      <div style="font-size:13px;color:var(--text-muted)">Renewable Energy · Biomass · Sustainability · Make in India</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== NAVBAR SCROLL =====
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>60)
+})
+
+function toggleMobileMenu(){
+  document.body.classList.toggle('nav-mobile-open')
+}
+
+// ===== PARTICLES =====
+const canvas=document.getElementById('particles')
+const ctx=canvas.getContext('2d')
+function resizeCanvas(){canvas.width=window.innerWidth;canvas.height=window.innerHeight}
+resizeCanvas()
+window.addEventListener('resize',resizeCanvas)
+
+const particles=[]
+for(let i=0;i<80;i++){
+  particles.push({
+    x:Math.random()*canvas.width,
+    y:Math.random()*canvas.height,
+    r:Math.random()*3+1,
+    vx:(Math.random()-.5)*.6,
+    vy:(Math.random()-.5)*.4-.3,
+    alpha:Math.random()*.6+.1,
+    color:Math.random()>.5?'201,168,76':'46,204,113'
+  })
+}
+
+function animateParticles(){
+  ctx.clearRect(0,0,canvas.width,canvas.height)
+  particles.forEach(p=>{
+    ctx.beginPath()
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2)
+    ctx.fillStyle=`rgba(${p.color},${p.alpha})`
+    ctx.fill()
+    p.x+=p.vx;p.y+=p.vy
+    if(p.y<-10)p.y=canvas.height+10
+    if(p.x<-10)p.x=canvas.width+10
+    if(p.x>canvas.width+10)p.x=-10
+  })
+  requestAnimationFrame(animateParticles)
+}
+animateParticles()
+
+// ===== FEEDSTOCK DATA =====
+const feedstocks=[
+  {icon:'🪵',name:'Saw Dust',region:'Khammam & Bhadradri',gcv:'3800–4200',avail:'Year-round',chars:'Low moisture, fine grind, excellent binding',suit:'Briquettes, Pellets'},
+  {icon:'🌾',name:'Rice Husk',region:'Nalgonda, Suryapet',gcv:'3400–3800',avail:'Post-harvest: Oct–Dec, Apr–Jun',chars:'High silica, medium GCV, good density',suit:'Briquettes, Co-firing'},
+  {icon:'🌿',name:'Rice Straw',region:'Khammam, Krishna',gcv:'3200–3600',avail:'Seasonal: Oct–Jan',chars:'Fibrous, needs blending, abundant',suit:'Blended Briquettes'},
+  {icon:'🌱',name:'Cotton Stalk',region:'Karimnagar, Warangal',gcv:'3900–4300',avail:'Post-harvest: Dec–Mar',chars:'Hard stalk, high GCV, low ash',suit:'Premium Briquettes'},
+  {icon:'🌴',name:'Palm Residues',region:'Khammam, Kothagudem',gcv:'4000–4500',avail:'Year-round (plantation)',chars:'High energy, low moisture, excellent',suit:'High-GCV Pellets'},
+  {icon:'🌳',name:'Subabul Wood',region:'Forest margins, Khammam',gcv:'4200–4500',avail:'Year-round',chars:'Highest GCV in range, excellent density',suit:'Premium Pellets'},
+  {icon:'🌵',name:'Juli Flora',region:'Wasteland areas',gcv:'3800–4200',avail:'Year-round, invasive species',chars:'Invasive shrub, excellent biomass',suit:'Briquettes, Pellets'},
+  {icon:'🥜',name:'Groundnut Shell',region:'Mahbubnagar, Nalgonda',gcv:'4000–4400',avail:'Post-harvest: Mar–Jun',chars:'High calorific, low ash, clean burn',suit:'Premium Briquettes'}
+]
+
+const grid=document.getElementById('feedstock-grid')
+const detail=document.getElementById('feedstock-detail')
+
+feedstocks.forEach((f,i)=>{
+  const card=document.createElement('div')
+  card.className='feedstock-card reveal'
+  card.style.transitionDelay=(i%4*.1)+'s'
+  card.innerHTML=`<div class="feedstock-icon">${f.icon}</div><div class="feedstock-name">${f.name}</div><div class="feedstock-region">${f.region}</div>`
+  card.onclick=()=>{
+    document.querySelectorAll('.feedstock-card').forEach(c=>c.classList.remove('selected'))
+    card.classList.add('selected')
+    detail.className='feedstock-detail visible'
+    detail.innerHTML=`
+      <div class="fd-stat"><div class="fd-stat-val">${f.gcv}</div><div class="fd-stat-label">GCV (Kcal/kg)</div></div>
+      <div class="fd-stat"><div class="fd-stat-val" style="font-size:18px">${f.avail}</div><div class="fd-stat-label">Availability</div></div>
+      <div class="fd-stat"><div class="fd-stat-val" style="font-size:15px">${f.chars}</div><div class="fd-stat-label">Fuel Characteristics</div></div>
+      <div class="fd-stat"><div class="fd-stat-val" style="font-size:16px">${f.suit}</div><div class="fd-stat-label">Industrial Suitability</div></div>
+    `
+    detail.scrollIntoView({behavior:'smooth',block:'nearest'})
+  }
+  grid.appendChild(card)
+})
+
+// ===== PROCESS STEPS =====
+const steps=[
+  {icon:'🌾',title:'Raw Material\nProcurement',desc:'Multi-feedstock sourcing from 200km radius'},
+  {icon:'♨️',title:'Drying',desc:'Industrial rotary drum dryer reduces moisture <10%'},
+  {icon:'⚙️',title:'Grinding',desc:'Hammer mill crushes to optimal particle size'},
+  {icon:'🔩',title:'Densification',desc:'High-pressure hydraulic press forms briquettes/pellets'},
+  {icon:'🔬',title:'Quality\nTesting',desc:'GCV, moisture, ash content analysis per batch'},
+  {icon:'📦',title:'Storage',desc:'Covered dry storage yard — humidity controlled'},
+  {icon:'🚚',title:'Dispatch',desc:'Batch certificates issued with every consignment'},
+]
+const pFlow=document.getElementById('processFlow')
+steps.forEach((s,i)=>{
+  const div=document.createElement('div')
+  div.className='process-step reveal'
+  div.style.transitionDelay=(i*.1)+'s'
+  div.innerHTML=`<div class="ps-circle${i===0?' active':''}"><span>${s.icon}</span><span class="ps-num">${i+1}</span></div><div class="ps-title">${s.title.replace('\n','<br>')}</div><div class="ps-desc">${s.desc}</div>`
+  pFlow.appendChild(div)
+})
+
+// ===== INDUSTRIES =====
+const inds=[
+  {icon:'📜',name:'Paper Industry',desc:'High-temp steam for pulping & drying',cases:['Boiler fuel replacement','Steam generation','Process heat supply','40% cost savings']},
+  {icon:'🧵',name:'Textile Industry',desc:'Consistent heat for dyeing & finishing',cases:['Stenters & jet dyeing','Pre-treatment boilers','Drying chambers','Reduces effluent heat costs']},
+  {icon:'🍚',name:'Food Processing',desc:'Clean fuel for hygienic food production',cases:['Parboiling steam','Drying & dehydration','Cold storage backup','Zero contamination']},
+  {icon:'🌾',name:'Rice Mills',desc:'Circular economy — use your own residue',cases:['Husk-fed briquettes','Parboiling boilers','Paddy drying systems','Turn waste to fuel']},
+  {icon:'🏺',name:'Ceramics',desc:'High-temperature kiln firing solutions',cases:['Tunnel kilns','Shuttle kilns','Glaze firing','Precise temp control']},
+  {icon:'🏗️',name:'Commercial Boilers',desc:'Industrial hot water & steam generation',cases:['High-pressure steam','Hot water generation','Process industries','Hospitals & institutions']},
+  {icon:'🌿',name:'Agro Industries',desc:'Seasonal processing with biomass power',cases:['Oil extraction mills','Cotton ginning','Tobacco processing','Seasonal supply aligned']},
+  {icon:'🔩',name:'Steel Auxiliary',desc:'Reheating furnaces & heat treatment',cases:['Annealing furnaces','Pre-heating systems','Forge shops','Auxiliary process heat']},
+]
+const ig=document.getElementById('industriesGrid')
+inds.forEach((ind,i)=>{
+  const card=document.createElement('div')
+  card.className='industry-card reveal'
+  card.style.transitionDelay=(i%4*.1)+'s'
+  card.innerHTML=`
+    <div class="ind-icon">${ind.icon}</div>
+    <div class="ind-name">${ind.name}</div>
+    <div class="ind-desc">${ind.desc}</div>
+    <div class="hover-detail">
+      <div class="hd-title">${ind.name} Use Cases</div>
+      <ul class="hd-list">${ind.cases.map(c=>`<li>${c}</li>`).join('')}</ul>
+    </div>
+  `
+  ig.appendChild(card)
+})
+
+// ===== FLOW STEP ACTIVATE =====
+function activateStep(el){
+  document.querySelectorAll('.flow-step').forEach(s=>s.classList.remove('active'))
+  el.classList.add('active')
+}
+
+// ===== SCROLL REVEAL =====
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting)e.target.classList.add('visible')
+  })
+},{threshold:.1})
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el))
+
+// ===== COUNTERS =====
+let countersStarted=false
+const counterObserver=new IntersectionObserver(entries=>{
+  if(entries[0].isIntersecting&&!countersStarted){
+    countersStarted=true
+    animateCounters()
+  }
+},{threshold:.3})
+counterObserver.observe(document.getElementById('impact'))
+
+function animateCounters(){
+  document.querySelectorAll('.counter-val').forEach(el=>{
+    const target=+el.dataset.target
+    const suffix=el.dataset.suffix||''
+    let current=0
+    const duration=2000
+    const step=target/duration*16
+    const timer=setInterval(()=>{
+      current=Math.min(current+step,target)
+      el.textContent=Math.round(current).toLocaleString()+suffix
+      if(current>=target)clearInterval(timer)
+    },16)
+  })
+}
+
+// ===== QUALITY BARS ANIMATE =====
+const barObserver=new IntersectionObserver(entries=>{
+  if(entries[0].isIntersecting){
+    document.querySelectorAll('.qp-bar').forEach(bar=>{
+      bar.style.width='0%'
+      setTimeout(()=>{bar.style.width=bar.dataset.width+'%'},200)
+    })
+    barObserver.disconnect()
+  }
+},{threshold:.3})
+barObserver.observe(document.getElementById('quality'))
+
+// ===== CHARTS =====
+function initCharts(){
+  const mc=document.getElementById('marketChart')
+  if(!mc)return
+  new Chart(mc,{
+    type:'line',
+    data:{
+      labels:['2023','2024','2025','2026','2027','2028','2029','2030'],
+      datasets:[{
+        label:'India Biomass Market (₹ Cr)',
+        data:[11200,13200,15600,18400,21700,25600,30100,32000],
+        borderColor:'#C9A84C',
+        backgroundColor:'rgba(201,168,76,.1)',
+        borderWidth:2.5,
+        fill:true,
+        tension:.4,
+        pointBackgroundColor:'#C9A84C',
+        pointRadius:4
+      }]
+    },
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false}},
+      scales:{
+        x:{grid:{color:'rgba(255,255,255,.06)'},ticks:{color:'#8A9A88',font:{size:11}}},
+        y:{grid:{color:'rgba(255,255,255,.06)'},ticks:{color:'#8A9A88',font:{size:11},callback:v=>'₹'+v.toLocaleString()}}
+      }
+    }
+  })
+
+  const ac=document.getElementById('adoptionChart')
+  new Chart(ac,{
+    type:'doughnut',
+    data:{
+      labels:['Utilized','Untapped Potential'],
+      datasets:[{
+        data:[32,468],
+        backgroundColor:['#2ECC71','rgba(42,56,40,.5)'],
+        borderColor:['#2ECC71','#2A3828'],
+        borderWidth:2
+      }]
+    },
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      plugins:{
+        legend:{display:true,position:'bottom',labels:{color:'#8A9A88',font:{size:12},padding:16}},
+        tooltip:{callbacks:{label:ctx=>' '+ctx.raw+' MT of 500 MT total'}}
+      },
+      cutout:'65%'
+    }
+  })
+}
+setTimeout(initCharts,500)
+
+// ===== PROCESS STEP HOVER ANIMATION =====
+document.querySelectorAll('.ps-circle').forEach((c,i)=>{
+  c.addEventListener('mouseenter',()=>{
+    document.querySelectorAll('.ps-circle').forEach(x=>x.classList.remove('active'))
+    c.classList.add('active')
+  })
+})
+</script>
 </body>
 </html>
